@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfNeedles: 10
   posOffest: 5
-  needleObject: {fileID: 7269319080209614744, guid: acc97ce1af35b6e4caea18cf8c759c69, type: 3}
+  needleObject: {fileID: 6446256478450302633, guid: acc97ce1af35b6e4caea18cf8c759c69, type: 3}
   needles: []
   needleIndex: 0
   fireButton: {fileID: 0}

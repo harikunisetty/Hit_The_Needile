@@ -354,7 +354,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1011212887}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TestButton, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
@@ -515,6 +515,10 @@ PrefabInstance:
       propertyPath: fireButton
       value: 
       objectReference: {fileID: 1011212890}
+    - target: {fileID: 1009261877, guid: 6bb6374aaf7f30d40a41d85a83a1b4f3, type: 3}
+      propertyPath: needleObject
+      value: 
+      objectReference: {fileID: 6446256478450302633, guid: acc97ce1af35b6e4caea18cf8c759c69, type: 3}
     - target: {fileID: 8409456492894545972, guid: 6bb6374aaf7f30d40a41d85a83a1b4f3, type: 3}
       propertyPath: m_RootOrder
       value: 4
