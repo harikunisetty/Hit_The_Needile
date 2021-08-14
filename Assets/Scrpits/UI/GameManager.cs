@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("Needle Variables")]
-    [SerializeField] int numberOfNeedles;
+    public int numberOfNeedles;
     [SerializeField] float posOffest;
 
     [Header("Needle")]
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Button fireButton;
 
 
-   
+
     void Start()
     {
         posOffest = 5f;
@@ -54,26 +54,32 @@ public class GameManager : MonoBehaviour
 
     void GetFireButton()
     {
-        fireButton = GameObject.Find("Fire_Button").GetComponent< Button > ();
+        fireButton = GameObject.Find("Fire_Button").GetComponent<Button>();
         fireButton.onClick.AddListener(() => FireTheNeedle());
     }
 
     void FireTheNeedle()
     {
-        needles[needleIndex].GetComponent<Needile_Control>().FireNeedle();
+        //Connect to the fireNeedle method form NeedleScrpit
+        needles[needleIndex].GetComponent<Needle>().FireNeedle();
         needleIndex++;
 
-        UIManager.Instance.UpdateNeedleCountUI();
+
 
         if (needleIndex == needles.Length)
-        {
             fireButton.onClick.RemoveAllListeners();
 
-            for (int i = 0; i < needles.Length; i++)
-            {
-                needles = new GameObject[0];
-            }
-            GameOver();
+        for (int i = 0; i < needles.Length; i++)
+        {
+            needles = new GameObject[0];
+            
         }
+        GameOver();
+
     }
+    public void GameOver()
+    {
+        Debug.Log("gameOver");
+    }   
 }
+

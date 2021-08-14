@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Circle : MonoBehaviour
+public class circle : MonoBehaviour
 {
-    public bool canRotate;
-    public float speed;
+    [SerializeField] int speed;
     public float angle;
+    public bool canRotate;
 
-    public List<GameObject> needles;
+    [SerializeField] List<GameObject> needles;
     // Start is called before the first frame update
     void Start()
     {
+        speed = 25;
         canRotate = true;
-        speed = 250;
 
         needles = new List<GameObject>(GameManager.Instance.numberOfNeedles);
     }
@@ -25,6 +25,6 @@ public class Circle : MonoBehaviour
             return;
         angle = transform.rotation.eulerAngles.z;
         angle += speed * Time.deltaTime;
-        transform.rotation = Quaternion.Euler(new Vector3(0,0,angle));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 }

@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: circle
+    uniqueID: 4168792127
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Needle
+    uniqueID: 1555589525
     locked: 0
