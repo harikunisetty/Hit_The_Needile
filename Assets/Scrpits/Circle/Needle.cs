@@ -37,7 +37,7 @@ public class Needle : MonoBehaviour
 
             transform.SetParent(other.transform);
 
-            other.GetComponent<circle>().x.Add(this.gameObject);
+           // other.GetComponent<circle>().Needles.Add(this.gameObject);
 
             if(other.gameObject.name == "Needle(clone)")
             {

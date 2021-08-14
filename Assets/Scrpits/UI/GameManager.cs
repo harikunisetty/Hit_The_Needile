@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < needles.Length; i++)
         {
             needles = new GameObject[0];
-            
+
         }
         GameOver();
 
@@ -80,6 +80,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("gameOver");
-    }   
+    }
 }
 
