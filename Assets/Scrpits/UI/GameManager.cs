@@ -60,6 +60,20 @@ public class GameManager : MonoBehaviour
 
     void FireTheNeedle()
     {
-        Debug.Log("Button Click using Listener");
+        needles[needleIndex].GetComponent<Needile_Control>().FireNeedle();
+        needleIndex++;
+
+        UIManager.Instance.UpdateNeedleCountUI();
+
+        if (needleIndex == needles.Length)
+        {
+            fireButton.onClick.RemoveAllListeners();
+
+            for (int i = 0; i < needles.Length; i++)
+            {
+                needles = new GameObject[0];
+            }
+            GameOver();
+        }
     }
 }
