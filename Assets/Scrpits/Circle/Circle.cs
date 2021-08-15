@@ -2,29 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class circle : MonoBehaviour
+public class Circle : MonoBehaviour
 {
     [SerializeField] int speed;
-    public float angle;
-    public bool canRotate;
+    [SerializeField] float angle;
+    [SerializeField] bool canRotate;
 
     [SerializeField] List<GameObject> needles;
-    // Start is called before the first frame update
+    public List<GameObject> Needles { get => needles; set => needles = value; }
+
     void Start()
     {
-        speed = 25;
+        speed = 50;
         canRotate = true;
 
-        needles = new List<GameObject>(GameManager.Instance.numberOfNeedles);
+        Needles = new List<GameObject>(10);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (canRotate == false)
             return;
+
         angle = transform.rotation.eulerAngles.z;
         angle += speed * Time.deltaTime;
+
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 }

@@ -12,7 +12,6 @@ public class UiManager : MonoBehaviour
 
     void Awake()
     {
-        
         if (Instance != null)
         {
             DestroyImmediate(gameObject);
@@ -21,22 +20,14 @@ public class UiManager : MonoBehaviour
         else
         {
             Instance = this;
-
-
         }
-
-        
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         remainNeedlesCount = GameManager.Instance.numberOfNeedles;
         needleCountTxt.text = "Needles: " + remainNeedlesCount;
     }
-
-    // Update is called once per frame
-    
    
     public void UpdateNeedleCountUI()
     {
