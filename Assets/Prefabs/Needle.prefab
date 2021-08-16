@@ -94,8 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698fed40cd950314db841ccd88a72c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canFire: 0
+  canNeedMove: 0
   toucheCircle: 0
+  needleSpeed: 30
   rigidbody: {fileID: 0}
 --- !u!1 &6446256478482141956
 GameObject:
