@@ -80,7 +80,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &1206521972941924633
 MonoBehaviour:
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canNeedMove: 0
   toucheCircle: 0
-  needleSpeed: 30
+  needleSpeed: 900
   rigidbody: {fileID: 0}
 --- !u!114 &-8730373670285900228
 MonoBehaviour:

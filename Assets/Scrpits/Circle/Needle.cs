@@ -21,10 +21,10 @@ public class Needle : MonoBehaviour
         toucheCircle = false;
 
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if (canNeedMove)
-            rigidbody.velocity = new Vector2(0f, needleSpeed);
+            rigidbody.velocity = new Vector2(0f, needleSpeed * Time.fixedDeltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
