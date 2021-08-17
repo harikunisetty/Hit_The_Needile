@@ -9,6 +9,9 @@ public class UiManager : MonoBehaviour
 
     [SerializeField] Text needleCountTxt;
     [SerializeField] int remainNeedlesCount;
+    [SerializeField] Text coinsCountTxt;
+
+
 
     void Awake()
     {
@@ -20,7 +23,9 @@ public class UiManager : MonoBehaviour
         else
         {
             Instance = this;
+            
         }
+        coinsCountTxt.text = "CoinsCount: 00";
     }
 
     void Start()
@@ -36,5 +41,9 @@ public class UiManager : MonoBehaviour
             remainNeedlesCount--;
             needleCountTxt.text = "Needles: " + remainNeedlesCount;
         }
+    }
+    public void coinsCountUI()
+    {
+        coinsCountTxt.text = "CoinsCount: " + GameManager.Instance.Coins.ToString();
     }
 }

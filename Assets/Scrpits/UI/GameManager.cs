@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] int needleIndex;
     [SerializeField] Button fireButton;
 
+    public int Coins { get => coins; }
+    private int coins;
+
 
     void Start()
     {
@@ -35,6 +38,12 @@ public class GameManager : MonoBehaviour
 
         CreateNeedles();
         GetFireButton();
+    }
+    public void UpdateCoins()
+    {
+        coins++;
+
+        UiManager.Instance.coinsCountUI();
     }
 
     void CreateNeedles()
@@ -57,25 +66,23 @@ public class GameManager : MonoBehaviour
 
     void FireTheNeedle()
     {
-        if (needleIndex >= needles.Length)
-        {
-            fireButton.onClick.RemoveAllListeners();
-            return;
-        }
-
-        //Connect to the fireNeedle method form NeedleScrpit
         needles[needleIndex].GetComponent<Needle>().FireNeedle();
         needleIndex++;
 
-       // if (needleIndex == needles.Length)
-       //     fireButton.onClick.RemoveAllListeners();
-
         UiManager.Instance.UpdateNeedleCountUI();
+
+        if (needleIndex == needles.Length)
+        {
+            fireButton.onClick.RemoveAllListeners();
+
+            needles = new GameObject[0];
+            GameOver();
+        }
     }
+
     public void GameOver()
     {
-        needleIndex = 0;
-        Debug.Log("gameOver");
+        needles = new GameObject[0];
     }
 }
 

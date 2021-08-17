@@ -29,28 +29,31 @@ public class Needle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Coin"))
+        {
+            Destroy(other.gameObject);
+            GameManager.Instance.UpdateCoins();
+        }
+
+
         if (other.gameObject.name == "circle")
         {
-           rigidbody.simulated = false;
-            toucheCircle = true;
-            canNeedMove = false;
+            if (toucheCircle == false)
+            {
+                rigidbody.simulated = false;
+                toucheCircle = true;
+                canNeedMove = false;
 
-            transform.SetParent(other.transform);
-            other.GetComponent<Circle>().Needles.Add(this.gameObject);
+                transform.SetParent(other.transform);
+                other.GetComponent<Circle>().Needles.Add(this.gameObject);
 
+            }
+           
             if(other.gameObject.name == "Needle(clone)")
             {
                 Debug.Log("touched needle");
             }
         }
-
-        if (other.gameObject.name == "Needle(clone)")
-        {
-            Debug.Log("touched needle");
-        }
-            
-                    
-                
     }
     public void FireNeedle()
     {
