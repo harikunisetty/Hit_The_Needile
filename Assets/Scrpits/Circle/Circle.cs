@@ -19,6 +19,7 @@ public class Circle : MonoBehaviour
         canRotate = true;
 
         Needles = new List<GameObject>(10);
+
     }
 
     void Update()
