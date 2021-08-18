@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -83,6 +84,11 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         needles = new GameObject[0];
+    }
+    public void LoadNextScene(int levelIndex)
+    {
+        SceneManager.LoadScene(levelIndex);
+
     }
 }
 

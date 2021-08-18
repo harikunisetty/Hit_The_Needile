@@ -25,7 +25,7 @@ public class UiManager : MonoBehaviour
             Instance = this;
             
         }
-        coinsCountTxt.text = "CoinsCount: 00";
+        coinsCountTxt.text = "Fruits: 00";
     }
 
     void Start()
@@ -44,6 +44,6 @@ public class UiManager : MonoBehaviour
     }
     public void coinsCountUI()
     {
-        coinsCountTxt.text = "CoinsCount: " + GameManager.Instance.Coins.ToString();
+        coinsCountTxt.text = "Fruits: " + GameManager.Instance.Coins.ToString();
     }
 }

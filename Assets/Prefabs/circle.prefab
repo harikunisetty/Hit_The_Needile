@@ -115,3 +115,5 @@ MonoBehaviour:
   speed: 0
   angle: 0
   canRotate: 0
+  needles: []
+  brokenCircle: {fileID: 5404224272873559137, guid: 2db3f556fd3318d4f8b50164e34778c1, type: 3}

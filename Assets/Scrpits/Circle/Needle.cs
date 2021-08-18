@@ -40,6 +40,7 @@ public class Needle : MonoBehaviour
         {
             if (toucheCircle == false)
             {
+                
                 rigidbody.simulated = false;
                 toucheCircle = true;
                 canNeedMove = false;
@@ -48,8 +49,9 @@ public class Needle : MonoBehaviour
                 other.GetComponent<Circle>().Needles.Add(this.gameObject);
 
             }
-           
-            if(other.gameObject.name == "Needle(clone)")
+            
+
+            if (other.gameObject.name == "Needle(clone)")
             {
                 Debug.Log("touched needle");
             }

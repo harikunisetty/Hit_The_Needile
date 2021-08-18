@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canNeedMove: 0
   toucheCircle: 0
-  needleSpeed: 900
+  needleSpeed: 1000
   rigidbody: {fileID: 0}
 --- !u!114 &-8730373670285900228
 MonoBehaviour:
