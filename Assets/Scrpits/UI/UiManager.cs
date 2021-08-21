@@ -7,8 +7,9 @@ public class UiManager : MonoBehaviour
 {
     public static UiManager Instance;
 
-    [SerializeField] Text needleCountTxt;
     [SerializeField] int remainNeedlesCount;
+
+    [SerializeField] Text needleCountTxt;
     [SerializeField] Text coinsCountTxt;
 
 
@@ -26,6 +27,7 @@ public class UiManager : MonoBehaviour
             
         }
         coinsCountTxt.text = "Fruits: 00";
+        needleCountTxt.text = "Needles: " + remainNeedlesCount;
     }
 
     void Start()

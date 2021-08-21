@@ -26,8 +26,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        posOffest = 3f;
-
         if (Instance != null)
         {
             DestroyImmediate(gameObject);
